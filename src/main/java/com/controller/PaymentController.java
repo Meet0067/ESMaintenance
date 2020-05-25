@@ -18,7 +18,7 @@ import com.dao.PaymentDao;
 import com.services.EmailService;
 import com.services.PaymentService;
 
-@RestController
+@Controller
 public class PaymentController {
 
 	@Autowired

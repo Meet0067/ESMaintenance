@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dao.VendorDao;
 
-@RestController
+@Controller
 public class VendorController {
 
 	@Autowired

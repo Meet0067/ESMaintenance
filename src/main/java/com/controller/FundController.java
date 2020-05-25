@@ -28,7 +28,7 @@ import com.dao.TimerDao;
 import com.dao.UserDao;
 import com.services.EmailService;
 
-@RestController
+@Controller
 public class FundController {
 	
 	@Autowired

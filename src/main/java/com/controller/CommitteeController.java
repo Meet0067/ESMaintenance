@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dao.CommitteeDao;
 
-@RestController
+@Controller
 public class CommitteeController {
 	
 	@Autowired

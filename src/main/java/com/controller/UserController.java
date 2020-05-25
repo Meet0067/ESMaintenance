@@ -1,7 +1,5 @@
 package com.controller;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +20,7 @@ import com.dao.FundDao;
 import com.dao.UserDao;
 import com.services.EmailService;
 
-@RestController
+@Controller
 public class UserController {
 	@Autowired
 	FundDao funddao;
@@ -36,7 +36,7 @@ public class UserController {
 
 	@GetMapping("/login")
 	public String login(Model model) {
-		System.out.println("*********************************************************");
+		
 		UserBean userbean = new UserBean();
 
 		model.addAttribute("user", userbean);
@@ -86,7 +86,6 @@ public class UserController {
 	@GetMapping("/signup")
 	public String signup(Model model) {
 		UserBean userbean = new UserBean();
-
 		model.addAttribute("userbean", userbean);
 
 		return "signup";

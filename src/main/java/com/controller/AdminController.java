@@ -29,7 +29,7 @@ import com.dao.FundDao;
 import com.dao.UserDao;
 import com.services.EmailService;
 
-@RestController
+@Controller
 public class AdminController {
 	@Autowired
 	AdminDao ad;
