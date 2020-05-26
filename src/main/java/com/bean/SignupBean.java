@@ -3,6 +3,22 @@ package com.bean;
 public class SignupBean {
 	
 	private String fname,lname,mname,email,password,flate_no,type;
+	//private int phone_no;
+	private long  phone_no;
+	
+	public long getPhone_No() {		
+		return phone_no;
+	}
+
+	public void setPhone_No(long phone_no) {
+		this.phone_no = phone_no;
+	}
+	public double getPhone_no() {
+		return phone_no;
+	}
+	public void setPhone_no(long phone_no) {
+		this.phone_no = phone_no;
+	}
 	public String getFname() {
 		return fname;
 	}
@@ -45,11 +61,6 @@ public class SignupBean {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public int getPhone_no() {
-		return phone_no;
-	}
-	public void setPhone_no(int phone_no) {
-		this.phone_no = phone_no;
-	}
-	private int phone_no;
+	
+	
 }

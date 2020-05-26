@@ -36,7 +36,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100" style="width: 40%;">
-				<s:form class="login100-form validate-form" action="saveuser" method="post" commandName="userbean" >
+				<s:form class="login100-form validate-form" action="saveuser" method="post" modelAttribute="userbean" >
 					<span class="login100-form-title p-b-26" style="margin-top: -45px;">
 						SIGN UP
 					</span>

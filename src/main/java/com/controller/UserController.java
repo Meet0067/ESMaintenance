@@ -184,7 +184,7 @@ public class UserController {
 	public String saveUser(@ModelAttribute("userbean") SignupBean userBean, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			System.out.println("Errors in SaveUser");
-			model.addAttribute("user", userBean);
+			model.addAttribute("userbean", userBean);
 			return "signup";
 
 		} else {

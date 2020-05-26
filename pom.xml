@@ -103,7 +103,11 @@
 		
 			<!-- https://mvnrepository.com/artifact/net.authorize/anet-java-sdk -->
 			
-		
+						<dependency>
+			 			   <groupId>jstl</groupId>
+						    <artifactId>jstl</artifactId>
+						    <version>1.2</version>
+						</dependency>
 			<dependency>
 			 			     <groupId>net.authorize</groupId>
 			   		     	 <artifactId>anet-java-sdk</artifactId>

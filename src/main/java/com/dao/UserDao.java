@@ -26,7 +26,7 @@ public class UserDao {
 		
 		
 		int i = stmt.update("insert into users (fname,mname,lname,phone_no,flate_no,user_type,email,password) values (?,?,?,?,?,?,?,?)",
-				u.getFname(),u.getMname(),u.getLname(),u.getPhone_no(),u.getFlate_no(),u.getType(),u.getEmail(),u.getPassword());
+				u.getFname(),u.getMname(),u.getLname(),u.getPhone_No(),u.getFlate_no(),u.getType(),u.getEmail(),u.getPassword());
 		
 		if(i==0) {
 			System.out.println("smw wrong");
