@@ -55,8 +55,26 @@ public class ComplainDao {
 	
 	public UserBean getDataByPK(int userId) {
 		UserBean user = null;
-		user = stmt.queryForObject("select * from users where userid="+userId, new BeanPropertyRowMapper<UserBean>(UserBean.class));
+		System.out.println("in getdatabyPk userid=>"+userId);
+		user = stmt.queryForObject("select * from users where userid="+userId, new Rm());
 		return  user;
+	}
+	class Rm implements RowMapper<UserBean>{
+
+		public UserBean mapRow(ResultSet rs, int rowNum) throws SQLException {
+			UserBean user = new UserBean();
+			user.setEmail(rs.getString("email"));
+			user.setPassword(rs.getString("password"));
+			user.setFname(rs.getString("fname"));
+			user.setLname(rs.getString("lname"));
+			user.setMname(rs.getString("mname"));
+			user.setPhone_No(Long.parseLong(rs.getString("phone_no")));
+			user.setType(rs.getString("user_type"));
+			user.setFlate_no(rs.getString("flate_no"));
+			user.setIsactive(rs.getString("isactive"));
+			
+			return user;
+		}
 	}
 	public ComplainBean getComplainByComplainId(int cId) {
 		ComplainBean complain = null;

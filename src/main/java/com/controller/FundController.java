@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.mail.internet.AddressException;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -79,16 +80,17 @@ public class FundController {
 
 	}
 	@GetMapping("/updatefund/{id}")
-	public String updateFund(Model model,@PathVariable("id") int id) {
+	public String updateFund(Model model,@PathVariable("id") int id,HttpServletRequest r) {
 		
 		model.addAttribute("fundDao",fd);
 		model.addAttribute("id",id);
-		
-		return "redirect:/updatefund";
+		model.addAttribute("fundDao",fd);
+		return "updatefund";
 	}
 	@GetMapping("/updatefund")
 	public String updatefund(Model model) {
-		model.addAttribute("fundDao",fd);
+		
+		System.out.println("model vars "+model.getAttribute("id"));
 		return "updatefund";
 
 	}
@@ -140,16 +142,19 @@ public class FundController {
 		return "nopaid";
 	}
 	
-	@GetMapping("/duefund")
-	public String due_fund(Model model)
+	@GetMapping("/duefund/{fid}")
+	public String due_fund(Model model,@PathVariable("fid")String fid)
 	{
+		model.addAttribute("fundId",fid);
+		
 		model.addAttribute("fundDao",fd);
 		return "duefund";
 	}
 	
-	@GetMapping("/paidfund")
-	public String paid_fund(Model model)
+	@GetMapping("/paidfund/{fid}")
+	public String paid_fund(Model model,@PathVariable("fid")String fid)
 	{
+		model.addAttribute("fundId",fid);
 		model.addAttribute("fundDao",fd);
 		return "paidfund";
 	}
@@ -167,20 +172,17 @@ public class FundController {
 		for(FundIdBean f : fib)
 		{
 			if(fid==f.getFundId())
-			{
+			{		
 				
-			
-		
-		model.addAttribute("fundId",fundid);
-		model.addAttribute("fundDao",fd);
-		if(status.equals("Due"))
-		{
-			return "redirect:/duefund";
-		}
-		if(status.equals("Paid"))
-		{
-			return "redirect:/paidfund";
-		}
+				
+				if(status.equals("Due"))
+				{
+					return "redirect:/duefund/"+fundid;
+				}
+				if(status.equals("Paid"))
+				{
+					return "redirect:/paidfund/"+fundid;
+				}
 			}
 		}
 		return "nofund";

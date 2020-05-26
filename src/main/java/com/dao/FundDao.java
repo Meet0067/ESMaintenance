@@ -272,7 +272,7 @@ public class FundDao {
 	
 	//unused method
 	public void setDueAmounts(String uid) {
-		 Calendar sys_date = Calendar.getInstance();  
+		/* Calendar sys_date = Calendar.getInstance();  
 		 Calendar due_date = Calendar.getInstance();  
 			String due_date1 ;
 		ArrayList<FundBean> funds = getFunds();
@@ -296,10 +296,10 @@ public class FundDao {
 			}else {
 				stmt.update("update payment_m set amount=?,due_amount =? , isfine=1 where userid=? and fundid=?",fb.getAmount(),fb.getAmount(),uid,fb.getId());
 				break;
-			}
+			}*/
 		
-			}
-		}
+			
+		
 				
 		}	
 	

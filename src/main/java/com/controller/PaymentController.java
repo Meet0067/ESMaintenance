@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,9 +68,10 @@ public class PaymentController {
 				model.addAttribute("payResponse",payResponse);
 				model.addAttribute("userId", uid);
 				model.addAttribute("fundId", fid);
+				System.out.println("userId=>" +uid);
+				System.out.println("fundId=>" +fid);
 				
-				
-				return "redirect:/afterPayment";
+				return "redirect:/afterPayment/"+uid+"/"+fid;
 			}else {
 				payResponse.put("message", "Something Went Wrong...Try again later");
 				model.addAttribute("payResponse",payResponse);
@@ -78,10 +80,14 @@ public class PaymentController {
 		
 		
 	}
-	@GetMapping("/afterPayment")
-	public String afterPayment(Model model) {
+	@GetMapping("/afterPayment/{uid}/{fid}")
+	public String afterPayment(@PathVariable("uid")String uid,@PathVariable("fid")String fid,Model model,HttpServletRequest r) {
 		model.addAttribute("EmailService", es);
 		model.addAttribute("PaymentDao", pd);
+		model.addAttribute("userId",uid);
+		model.addAttribute("fundId",fid);
+		System.out.println("in after payment userid" + uid);
+		System.out.println("in after payment fundid" + fid);
 		return "afterPayment";
 	}
 	@GetMapping("/afterfailPayment")

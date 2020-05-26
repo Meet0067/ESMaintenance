@@ -9,50 +9,50 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="icon" type="resources/complain/image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="../../resources/complain/image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="resources/complain/css/util.css">
-	<link rel="stylesheet" type="text/css" href="resources/complain/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/complain/css/main.css">
 <!--===============================================================================================-->
   <!-- Bootstrap CSS-->
-  <link rel="stylesheet" type="text/css" href="resources/home/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/bootstrap.min.css">
 
   <!-- Font-Awesome -->
-  <link rel="stylesheet" type="text/css" href="resources/home/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/font-awesome.css">
 
   <!-- Icomoon -->
-  <link rel="stylesheet" type="text/css" href="resources/home/css/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/icomoon.css">
 
   <!-- Slider -->
-  <link rel="stylesheet" type="text/css" href="resources/home/css/swiper.min.css">
-  <link rel="stylesheet" type="text/css" href="resources/home/css/rev-settings.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/rev-settings.css">
 
   <!-- Animate.css -->
-  <link rel="stylesheet" href="resources/home/css/animate.css">
+  <link rel="stylesheet" href="../../resources/home/css/animate.css">
 
   <!-- Color Switcher -->
-  <link rel="stylesheet" type="text/css" href="resources/home/css/switcher.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/switcher.css">
 
   <!-- Owl Carousel  -->
-  <link rel="stylesheet" href="resources/home/css/owl.carousel.css">
+  <link rel="stylesheet" href="../../resources/home/css/owl.carousel.css">
 
   <!-- Main Styles -->
-  <link rel="stylesheet" type="text/css" href="resources/home/css/default.css">
-  <link rel="stylesheet" type="text/css" href="resources/home/css/styles.css" id="colors">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/default.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/home/css/styles.css" id="colors">
 
   <!-- Fonts Google -->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -73,7 +73,7 @@
     </div>
     <div class="nav-menus-wrapper">
      <ul class="nav-menu align-to-right">
-                <li><a href="home">Home</a>
+                <li><a href="../../home">Home</a>
         </li>
         
 		 <li><a>Features</a>
@@ -92,10 +92,11 @@
   </nav>
 </header>
 <% 
+	
 	HashMap<String,String> payResponse = (HashMap<String,String>)request.getAttribute("payResponse");
-   //System.out.print(Integer.parseInt(request.getAttribute("userId").toString()));
-	int uId = Integer.parseInt(request.getParameter("userId").toString());
-	int fId = Integer.parseInt(request.getParameter("fundId").toString());
+  
+	int uId = Integer.parseInt(request.getAttribute("userId").toString());
+	int fId = Integer.parseInt(request.getAttribute("fundId").toString());
 	EmailService es = (EmailService)request.getAttribute("EmailService");
 	PaymentDao pd = (PaymentDao)request.getAttribute("PaymentDao");
 	
@@ -133,7 +134,7 @@
 			
 				
 				<div class="container-contact100-form-btn">
-					<a href="home"><button  class="contact100-form-btn">
+					<a href="../../home"><button  class="contact100-form-btn">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
 							Go To Home
@@ -141,7 +142,7 @@
 				</button></a>
 				</div><span style="padding-left: 263px;color:#403866 " >Or</span>
 				<div  class="container-contact100-form-btn">
-					<a href="showAllTransactions/<%=request.getSession().getAttribute("userid")%>"><button  class="contact100-form-btn">
+					<a href="../../showAllTransactions/<%=request.getSession().getAttribute("userid")%>"><button  class="contact100-form-btn">
 									
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
@@ -166,21 +167,21 @@
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
-	<script src="resources/complain/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../../resources/complain/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="resources/complain/vendor/animsition/js/animsition.min.js"></script>
+	<script src="../../resources/complain/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="resources/complain/vendor/bootstrap/js/popper.js"></script>
-	<script src="resources/complain/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../resources/complain/vendor/bootstrap/js/popper.js"></script>
+	<script src="../../resources/complain/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="resources/complain/vendor/select2/select2.min.js"></script>
+	<script src="../../resources/complain/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="resources/complain/vendor/daterangepicker/moment.min.js"></script>
-	<script src="resources/complain/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="../../resources/complain/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../../resources/complain/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="resources/complain/vendor/countdowntime/countdowntime.js"></script>
+	<script src="../../resources/complain/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="resources/complain/js/main.js"></script>
+	<script src="../../resources/complain/js/main.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
@@ -194,14 +195,7 @@
 
 
  <!--Features Section START-->
-  <div class="container">
-    <div class="section-heading center-holder">
-    <span>Housing Societies</span>
-                <div class="section-heading-line"></div>
-      <h3>Everything you need to run your society</h3>
-      <p>It's time to make society administration rewarding.</p>
-    </div>
-  </div>
+
 <!--Features Section END-->
 <!-- Footer START -->
 <footer>
@@ -230,9 +224,9 @@
       <div class="col-md-3 col-sm-6 col-12" style=" margin-left: 100px;">
         <h3>Quick Navigation</h3>
         <ul class="footer-list">
-          <li><a href="home">Home</a></li>
+          <li><a href="../../home">Home</a></li>
           <li><a href="#">Features</a></li>
-          <li><a href="login">LogIn</a></li>
+          <li><a href="../../login">LogIn</a></li>
           
           <li><a href="signup">Sign Up</a></li>
           <li><a href="#">About Us</a></li>
@@ -274,68 +268,68 @@
 
 
 <!-- Jquery -->
-<script src="resources/home/js/jquery.min.js"></script>
+<script src="../../resources/home/js/jquery.min.js"></script>
 
 <!--Popper JS-->
-<script src="resources/home/js/popper.min.js"></script>
+<script src="../../resources/home/js/popper.min.js"></script>
 
 <!-- Bootstrap JS-->
-<script src="resources/home/js/bootstrap.min.js"></script>
+<script src="../../resources/home/js/bootstrap.min.js"></script>
 
 <!-- Owl Carousel-->
-<script src="resources/home/js/owl.carousel.js"></script>
+<script src="../../resources/home/js/owl.carousel.js"></script>
 
 <!-- Navbar JS -->
-<script src="resources/home/js/navigation.js"></script>
-<script src="resources/home/js/navigation.fixed.js"></script>
+<script src="../../resources/home/js/navigation.js"></script>
+<script src="../../resources/home/js/navigation.fixed.js"></script>
 
 <!-- Wow JS -->
-<script src="resources/home/js/wow.min.js"></script>
+<script src="../../resources/home/js/wow.min.js"></script>
 
 <!-- Countup -->
-<script src="resources/home/js/jquery.counterup.min.js"></script>
-<script src="resources/home/js/waypoints.min.js"></script>
+<script src="../../resources/home/js/jquery.counterup.min.js"></script>
+<script src="../../resources/home/js/waypoints.min.js"></script>
 
 <!-- Tabs -->
-<script src="resources/home/js/tabs.min.js"></script>
+<script src="../../resources/home/js/tabs.min.js"></script>
 
 <!-- Yotube Video Player -->
-<script src="resources/home/js/jquery.mb.YTPlayer.min.js"></script>
+<script src="../../resources/home/js/jquery.mb.YTPlayer.min.js"></script>
 
 <!-- Swiper Slider -->
-<script src="resources/home/js/swiper.min.js"></script>
+<script src="../../resources/home/js/swiper.min.js"></script>
 
 <!-- Isotop -->
-<script src="resources/home/js/isotope.pkgd.min.js"></script>
+<script src="../../resources/home/js/isotope.pkgd.min.js"></script>
 
 <!-- Switcher JS -->
-<script src="resources/home/js/switcher.js"></script>
+<script src="../../resources/home/js/switcher.js"></script>
 
 <!-- Modernizr -->
-<script src="resources/home/js/modernizr.js"></script>
+<script src="../../resources/home/js/modernizr.js"></script>
 
 <!-- Google Map -->
-<script src="resources/home/js/map.js"></script>
+<script src="../../resources/home/js/map.js"></script>
 
 <!-- Chart JS -->
-<script src="resources/home/js/Chart.bundle.js"></script>
-<script src="resources/home/js/utils.js"></script>
+<script src="../../resources/home/js/Chart.bundle.js"></script>
+<script src="../../resources/home/js/utils.js"></script>
 
 <!-- Revolution Slider -->
-<script src="resources/home/js/revolution/jquery.themepunch.tools.min.js"></script>
-<script src="resources/home/js/revolution/jquery.themepunch.revolution.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.actions.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.carousel.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.kenburn.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.layeranimation.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.migration-2.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.parallax.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.navigation.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.slideanims.min.js"></script>
-<script src="resources/home/js/revolution/revolution.extension.video.min.js"></script>
+<script src="../../resources/home/js/revolution/jquery.themepunch.tools.min.js"></script>
+<script src="../../resources/home/js/revolution/jquery.themepunch.revolution.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.actions.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.carousel.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.kenburn.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.layeranimation.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.migration-2.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.parallax.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.navigation.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.slideanims.min.js"></script>
+<script src="../../resources/home/js/revolution/revolution.extension.video.min.js"></script>
 
 <!-- Main JS -->
-<script src="resources/home/js/main.js"></script>
+<script src="../../resources/home/js/main.js"></script>
 
 
 </body>

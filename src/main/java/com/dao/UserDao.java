@@ -84,10 +84,12 @@ public class UserDao {
 					user.setFname(rs.getString("fname"));
 					user.setLname(rs.getString("lname"));
 					user.setMname(rs.getString("mname"));
-					user.setPhone_No(Integer.parseInt(rs.getString("phone_no")));
+					user.setPhone_No(Long.parseLong(rs.getString("phone_no")));
 					user.setType(rs.getString("user_type"));
 					user.setFlate_no(rs.getString("flate_no"));
-					System.out.println(user.getEmail());
+					user.setIsactive(rs.getString("isactive"));
+					user.setUserid(rs.getInt("userid"));
+					
 					return user;
 				}
 				
@@ -101,7 +103,7 @@ public class UserDao {
 			public UserBean getDataByEmail(String email) {
 				UserBean user = null;
 				try {
-				user = stmt.queryForObject("select * from users where email=\'"+ email + "\'", new BeanPropertyRowMapper<UserBean>(UserBean.class));
+				user = stmt.queryForObject("select * from users where email=\'"+ email + "\'", new Rm());
 				}catch(EmptyResultDataAccessException e)
 				{
 					System.out.println(user == null);
@@ -216,7 +218,7 @@ public class UserDao {
 					u.setFname(rs.getString("fname"));
 					u.setMname(rs.getString("mname"));
 					u.setLname(rs.getString("lname"));
-					u.setPhone_No(rs.getInt("phone_no"));
+					u.setPhone_No(Long.parseLong(rs.getString("phone_no")));
 					u.setFlate_no(rs.getString("flate_no"));
 					u.setUserid(rs.getInt("userid"));
 					u.setEmail(rs.getString("email"));

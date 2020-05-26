@@ -89,7 +89,7 @@
     </div>
     <div class="nav-menus-wrapper">
      <ul class="nav-menu align-to-right">
-                <li><a href="adminhome">Home</a>
+                <li><a href="home">Home</a>
         </li>
         
         
@@ -212,7 +212,7 @@
       <div class="col-md-3 col-sm-6 col-12" style=" margin-left: 100px;">
         <h3>Quick Navigation</h3>
         <ul class="footer-list">
-          <li><a href="adminhome">Home</a></li>
+          <li><a href="home">Home</a></li>
           <li><a href="#">Features</a></li>
           <li><a href="login">LogIn</a></li>
           

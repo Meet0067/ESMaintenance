@@ -3,8 +3,8 @@ package com.bean;
 public class UserBean {
 
 		private String fname,lname,mname,email,password,flate_no,type,isactive,status ,comment;
-		private int phone_no,userid ;
-			
+		private int userid ;
+		private long phone_no;	
 		public String getIsactive() {
 			return isactive;
 		}
@@ -42,10 +42,10 @@ public class UserBean {
 		public void setType(String type) {
 			this.type = type;
 		}
-		public int getPhone_No() {
+		public long getPhone_No() {
 			return phone_no;
 		}
-		public void setPhone_No(int phone_No) {
+		public void setPhone_No(long phone_No) {
 			this.phone_no = phone_No;
 		}
 		public String getFname() {

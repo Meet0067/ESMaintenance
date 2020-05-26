@@ -69,7 +69,7 @@ public class UserController {
 */
 	@GetMapping("/adminhome")
 	public String adminhome() {
-		funddao.setDueAmounts("3");
+		
 		return "AdminHome";
 
 	}
@@ -90,34 +90,6 @@ public class UserController {
 	}
 
 	
-
-	@GetMapping("/validateUser")
-	public String validateUser(@RequestParam(name = "email") String email, @RequestParam(name = "pass") String pass,
-			HttpSession hs, Model model) {
-		
-		if(email.equals("admin@admin.com") && pass.equals("admin")) {
-			hs.setAttribute("isValid", "true");
-			return "AdminHome";
-		}
-		boolean val = userdao.validateUser(email, pass);
-		if (val == true) {
-			UserBean userbean = userdao.getDataByEmail(email);
-			model.addAttribute("userbean", userbean);
-			hs.setAttribute("userid", userbean.getUserid());
-			hs.setAttribute("isValid", "true");
-			if (userbean.getIsactive().equals("true")) {
-				return "home";
-
-			} else {
-				return "status";
-			}
-
-		} else {
-			return "login";
-		}
-
-	}
-
 	@PostMapping("/validateUser")
 	public String validateUserpost(@RequestParam(name = "email") String email, @RequestParam(name = "pass") String pass,
 			HttpSession hs, Model model) {
@@ -130,6 +102,8 @@ public class UserController {
 		if (val == true) {
 			UserBean userbean = userdao.getDataByEmail(email);
 			model.addAttribute("userbean", userbean);
+			System.out.println("adding in session userid" + userbean.getUserid());
+			
 			hs.setAttribute("userid", userbean.getUserid());
 			hs.setAttribute("isValidUser", "true");
 			if (userbean.getIsactive().equals("true")) {
