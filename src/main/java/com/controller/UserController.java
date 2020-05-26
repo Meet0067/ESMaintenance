@@ -9,11 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
+import com.bean.SignupBean;
 import com.bean.UserBean;
 import com.dao.AdminDao;
 import com.dao.FundDao;
@@ -85,8 +83,8 @@ public class UserController {
 
 	@GetMapping("/signup")
 	public String signup(Model model) {
-		UserBean userbean = new UserBean();
-		model.addAttribute("userbean", userbean);
+		SignupBean sb = new SignupBean();
+		model.addAttribute("userbean", sb);
 
 		return "signup";
 	}
@@ -183,7 +181,7 @@ public class UserController {
 		return "addfund";
 	}
 	@PostMapping("/saveuser")
-	public String saveUser(@ModelAttribute("userbean") UserBean userBean, BindingResult result, Model model) {
+	public String saveUser(@ModelAttribute("userbean") SignupBean userBean, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			System.out.println("Errors in SaveUser");
 			model.addAttribute("user", userBean);
@@ -191,7 +189,7 @@ public class UserController {
 
 		} else {
 
-			userdao.insertUser(userBean);
+			userdao.insertUserSignup(userBean);
 			emailService.sendWaitingEmail(userBean.getEmail());
 			return "status";
 		}

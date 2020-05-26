@@ -3,7 +3,6 @@ package com.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -14,16 +13,27 @@ import org.springframework.stereotype.Repository;
 
 import com.bean.ComplainBean;
 import com.bean.NewComplainBean;
-import com.bean.NewUserBean;
+import com.bean.SignupBean;
 import com.bean.UserBean;
-import com.dao.AdminDao.MyMapper2;
-import com.dao.ComplainDao.Rm1;
 
 @Repository
 public class UserDao {
 
 	@Autowired
 	JdbcTemplate stmt;
+
+	public void insertUserSignup(SignupBean u) {
+		
+		
+		int i = stmt.update("insert into users (fname,mname,lname,phone_no,flate_no,user_type,email,password) values (?,?,?,?,?,?,?,?)",
+				u.getFname(),u.getMname(),u.getLname(),u.getPhone_no(),u.getFlate_no(),u.getType(),u.getEmail(),u.getPassword());
+		
+		if(i==0) {
+			System.out.println("smw wrong");
+		}else {
+			System.out.println("insertUser in deproject");
+		}
+	}
 
 		public void insertUser(UserBean u) {
 		
