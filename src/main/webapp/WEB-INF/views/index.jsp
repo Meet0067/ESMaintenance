@@ -188,7 +188,7 @@
     
      <div class="section-heading center-holder">
       <br><br><br>
-      <h3>Comming Soon..</h3>
+      <h3>Coming Soon..</h3>
       <div class="section-heading-line"></div>
 		<br><br>
     </div>	
