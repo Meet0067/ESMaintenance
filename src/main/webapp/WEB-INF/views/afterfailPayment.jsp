@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false" %>  <%@page import="com.bean.UserBean, java.util.HashMap"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false" errorPage="login.jsp" %>  <%@page import="com.bean.UserBean, java.util.HashMap"%>
 <!DOCTYPE html>
 <html>
 <head>

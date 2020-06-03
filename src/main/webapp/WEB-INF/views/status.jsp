@@ -7,7 +7,7 @@
 <title>Status</title>
 </head>
 <body>
-			Your request has been send to admin
-			Login 
+			Your request has been send to admin for verification.
+			
 </body>
 </html>
